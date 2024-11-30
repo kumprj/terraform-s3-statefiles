@@ -1,0 +1,17 @@
+name: Deploy DynamoDB Statefile DB.
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-and-push-and-terraform:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Terraform
+      id: s3-statefile-database
+      env:
+
+      run: |
+        cd terraform/
+        terraform init
+        terraform plan
+        terraform apply -input=false -auto-approve
