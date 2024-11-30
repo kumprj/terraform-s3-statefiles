@@ -6,8 +6,6 @@ jobs:
   statefile-db-terraform:
     runs-on: ubuntu-latest
     steps:
-    - name: Terraform
-      id: s3-statefile-database
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup AWS CLI
